@@ -6,7 +6,7 @@ Création d'un générateur / vérificateur de code PIN POUR smartphone en HTML5
 
 ## Démonstration
 
-Lien vers le projet :
+Lien vers le projet : https://aperbet56.github.io/code_pin_smartphone/
 
 ## Projet développé avec
 
