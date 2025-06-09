@@ -2,7 +2,7 @@
 
 ## Le challenge
 
-Création d'un générateur / vérificateur de code PIN POUR smartphone en HTML5, CSS3, Bootstrap et JavaScript.
+Création d'un générateur / vérificateur de code PIN pour smartphone en HTML5, CSS3, Bootstrap et JavaScript.
 
 ## Démonstration
 
