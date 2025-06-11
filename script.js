@@ -58,7 +58,7 @@ const handlePinSubmit = () => {
   // Mise en place de conditions
   if (generatedPin > 0 && submittedPin > 0) {
     attempt--;
-    console.log("esssai:", attempt);
+    console.log("esssai :", attempt);
 
     if (generatedPin !== submittedPin) {
       // Reset submittedPin and UI Update
@@ -73,7 +73,7 @@ const handlePinSubmit = () => {
       }, 3000);
     }
   } else if (generatedPin === 0 || submittedPin === 0) {
-    console.log("PIN:", generatedPin, "PIN saisi:", submittedPin);
+    console.log("PIN :", generatedPin, "PIN saisi :", submittedPin);
   }
   if (attempt === 0) {
     submitBtn.disabled = true;
