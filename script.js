@@ -63,7 +63,7 @@ const handlePinSubmit = () => {
     if (generatedPin !== submittedPin) {
       // Reset submittedPin and UI Update
       submittedPin = 0;
-      submitAttempt.textContent = `Essai restant ${attempt}`;
+      submitAttempt.textContent = `Essai restant : ${attempt}`;
       submitAttempt.style.color = "#158888";
 
       // Affichage de la notification
@@ -77,6 +77,9 @@ const handlePinSubmit = () => {
   }
   if (attempt === 0) {
     submitBtn.disabled = true;
+    alert(
+      "Il ne vous reste plus aucun essai ! Votre smartphone est bloqué. Veuillez attendre quelques secondes avant de pouvoir générer un nouveau code PIN !!"
+    );
     setTimeout(() => {
       generatedPin = 0;
       submittedPin = 0;
@@ -91,7 +94,7 @@ const handlePinSubmit = () => {
       userInput.disabled = false;
       userInput.value = "";
 
-      submitAttempt.textContent = `Essai restant ${attempt}`;
+      submitAttempt.textContent = `Essai restant : ${attempt}`;
     }, 5000);
   }
   if (generatedPin > 0 && generatedPin === submittedPin) {
@@ -107,7 +110,7 @@ const handlePinSubmit = () => {
     userInput.disabled = false;
     userInput.value = "";
 
-    submitAttempt.textContent = `Essai restant ${attempt}`;
+    submitAttempt.textContent = `Essai restant : ${attempt}`;
 
     // Affichage de la notification
     matched.classList.add("active");
