@@ -1,5 +1,7 @@
 ## CODE PIN SMARTPHONE 📱
 
+![Design preview for the project](./img/preview.png)
+
 ## Le challenge
 
 Création d'un générateur / vérificateur de code PIN pour smartphone en HTML5, CSS3, Bootstrap et JavaScript.
