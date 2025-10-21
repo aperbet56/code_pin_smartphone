@@ -75,6 +75,31 @@ const handlePinSubmit = () => {
   } else if (generatedPin === 0 || submittedPin === 0) {
     console.log("PIN :", generatedPin, "PIN saisi :", submittedPin);
   }
+
+  // Si la dernière tentative est bonne
+  if (attempt === 0 && generatedPin === submittedPin) {
+    generatedPin = 0;
+    submittedPin = 0;
+    attempt = 3;
+    alert("Code PIN validé... Votre smartphone est déverrouillé");
+    // Reset generatedInput, userInput, attempt
+    generatorInput.value = "";
+    generatorInput.disabled = false;
+    generateBtn.disabled = false;
+    generatorInput.classList.remove("active");
+    userInput.disabled = false;
+    userInput.value = "";
+
+    submitAttempt.textContent = `Essai restant : ${attempt}`;
+
+    // Affichage de la notification
+    matched.classList.add("active");
+    setTimeout(() => {
+      matched.classList.toggle("active");
+    }, 3000);
+  }
+
+  // Si la dernière tentative n'est pas bonne
   if (attempt === 0) {
     submitBtn.disabled = true;
     alert(
@@ -91,16 +116,19 @@ const handlePinSubmit = () => {
       generateBtn.disabled = false;
       submitBtn.disabled = false;
       generatorInput.classList.remove("active");
+      matched.classList.remove("active");
       userInput.disabled = false;
       userInput.value = "";
 
       submitAttempt.textContent = `Essai restant : ${attempt}`;
     }, 5000);
   }
+
   if (generatedPin > 0 && generatedPin === submittedPin) {
     generatedPin = 0;
     submittedPin = 0;
     attempt = 3;
+    alert("Code PIN validé... Votre smartphone est déverrouillé");
 
     // Reset generatedInput, userInput, attempt
     generatorInput.value = "";
