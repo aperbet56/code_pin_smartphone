@@ -81,7 +81,7 @@ const handlePinSubmit = () => {
     generatedPin = 0;
     submittedPin = 0;
     attempt = 3;
-    alert("Code PIN validé... Votre smartphone est déverrouillé");
+    alert("Code PIN validé... Votre smartphone est déverrouillé !");
     // Reset generatedInput, userInput, attempt
     generatorInput.value = "";
     generatorInput.disabled = false;
@@ -128,7 +128,7 @@ const handlePinSubmit = () => {
     generatedPin = 0;
     submittedPin = 0;
     attempt = 3;
-    alert("Code PIN validé... Votre smartphone est déverrouillé");
+    alert("Code PIN validé... Votre smartphone est déverrouillé !");
 
     // Reset generatedInput, userInput, attempt
     generatorInput.value = "";
