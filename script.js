@@ -48,6 +48,20 @@ const userPinGenerator = (e) => {
   }
 };
 
+// Déclaration de la fonction reset qui va permettre de remettre à zéro le contenu de l'application
+const reset = () => {
+  generatedPin = 0;
+  submittedPin = 0;
+  attempt = 3;
+  // Reset generatedInput, userInput, attempt
+  generatorInput.value = "";
+  generatorInput.disabled = false;
+  generateBtn.disabled = false;
+  generatorInput.classList.remove("active");
+  userInput.disabled = false;
+  userInput.value = "";
+};
+
 // Déclaration de la fonction handlePin submit qui va permettre de gérer la soumission du code Pin saisi par l'internaute
 const handlePinSubmit = () => {
   // L'input est vidé (sans valeur)
@@ -78,17 +92,8 @@ const handlePinSubmit = () => {
 
   // Si la dernière tentative est bonne
   if (attempt === 0 && generatedPin === submittedPin) {
-    generatedPin = 0;
-    submittedPin = 0;
-    attempt = 3;
-    alert("Code PIN validé... Votre smartphone est déverrouillé !");
-    // Reset generatedInput, userInput, attempt
-    generatorInput.value = "";
-    generatorInput.disabled = false;
-    generateBtn.disabled = false;
-    generatorInput.classList.remove("active");
-    userInput.disabled = false;
-    userInput.value = "";
+    // Appel de la fonction reset()
+    reset();
 
     submitAttempt.textContent = `Essai restant : ${attempt}`;
 
@@ -106,37 +111,17 @@ const handlePinSubmit = () => {
       "Il ne vous reste plus aucun essai ! Votre smartphone est bloqué. Veuillez attendre quelques secondes avant de pouvoir générer un nouveau code PIN !!"
     );
     setTimeout(() => {
-      generatedPin = 0;
-      submittedPin = 0;
-      attempt = 3;
-
-      // Reset generatedInput, userInput, attempt
-      generatorInput.value = "";
-      generatorInput.disabled = false;
-      generateBtn.disabled = false;
       submitBtn.disabled = false;
-      generatorInput.classList.remove("active");
-      matched.classList.remove("active");
-      userInput.disabled = false;
-      userInput.value = "";
+      // Appel de la fonction reset()
+      reset();
 
       submitAttempt.textContent = `Essai restant : ${attempt}`;
     }, 5000);
   }
 
   if (generatedPin > 0 && generatedPin === submittedPin) {
-    generatedPin = 0;
-    submittedPin = 0;
-    attempt = 3;
-    alert("Code PIN validé... Votre smartphone est déverrouillé !");
-
-    // Reset generatedInput, userInput, attempt
-    generatorInput.value = "";
-    generatorInput.disabled = false;
-    generateBtn.disabled = false;
-    generatorInput.classList.remove("active");
-    userInput.disabled = false;
-    userInput.value = "";
+    // Appel de la fonction reset()
+    reset();
 
     submitAttempt.textContent = `Essai restant : ${attempt}`;
 
